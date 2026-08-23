@@ -1,0 +1,25 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# One free Node web service running both the API and the built frontend
+# (see backend/src/index.ts) — same-origin, no CORS to configure, nothing
+# else to deploy. Push this repo to GitHub, then in Render: New -> Blueprint,
+# pick the repo, and this file does the rest.
+#
+# lowdb's data file lives on this service's local disk. Render's free tier
+# has no persistent disk, so the seeded demo data resets on every deploy/
+# restart — acceptable for a demo; attach a paid persistent disk mounted at
+# backend/data if the cart needs to survive restarts.
+services:
+  - type: web
+    name: voicecart
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: http://localhost:5173 # unused in this same-origin deploy; only matters if split later
+    healthCheckPath: /api/health

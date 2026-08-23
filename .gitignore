@@ -1,0 +1,21 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+backend/data/*.json
+!backend/data/.gitkeep
+.vite/
+coverage/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Claude Code local tool state (machine-specific, not project source)
+.claude/
+
+# Assignment brief (not part of the project source)
+*.docx

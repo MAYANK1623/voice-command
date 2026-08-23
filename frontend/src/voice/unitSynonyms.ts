@@ -1,0 +1,40 @@
+import type { ItemUnit } from '@/types'
+
+// Every spoken word that should resolve to one of our ITEM_UNITS. Plurals
+// are listed explicitly rather than derived (English pluralization has too
+// many irregular forms to guess reliably from a handful of rules).
+export const UNIT_SYNONYMS: Record<string, ItemUnit> = {
+  pc: 'pcs',
+  pcs: 'pcs',
+  piece: 'pcs',
+  pieces: 'pcs',
+  kg: 'kg',
+  kgs: 'kg',
+  kilo: 'kg',
+  kilos: 'kg',
+  kilogram: 'kg',
+  kilograms: 'kg',
+  g: 'g',
+  gram: 'g',
+  grams: 'g',
+  l: 'l',
+  liter: 'l',
+  liters: 'l',
+  litre: 'l',
+  litres: 'l',
+  ml: 'ml',
+  milliliter: 'ml',
+  milliliters: 'ml',
+  pack: 'pack',
+  packs: 'pack',
+  packet: 'pack',
+  packets: 'pack',
+  package: 'pack',
+  packages: 'pack',
+  box: 'pack',
+  boxes: 'pack',
+  dozen: 'dozen',
+  dozens: 'dozen',
+  bottle: 'bottle',
+  bottles: 'bottle',
+}
